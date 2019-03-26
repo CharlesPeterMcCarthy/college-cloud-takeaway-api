@@ -24,10 +24,17 @@ functions:
     handler: functions/get_products.handler
     events:
       - http:
-          path: /get_products
+          path: /get-products
           method: post
           cors: true
       - http:
-          path: /get_products
+          path: /get-products
           method: get
+          cors: true
+  get_orders:
+    handler: functions/get_orders.handler
+    events:
+      - http:
+          path: /get-orders
+          method: post
           cors: true
