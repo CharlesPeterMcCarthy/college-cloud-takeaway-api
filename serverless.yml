@@ -4,7 +4,7 @@ provider:
   name: aws
   runtime: python3.6
   region: eu-west-1
-  stage: dev
+  stage: test
   tags:
     project: takeaway
 
@@ -36,5 +36,12 @@ functions:
     events:
       - http:
           path: /get-orders
+          method: post
+          cors: true
+  add_order:
+    handler: functions/add_order.handler
+    events:
+      - http:
+          path: /add-order
           method: post
           cors: true
