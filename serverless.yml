@@ -1,12 +1,12 @@
-service: takeaway-api
+service: simplefood-api
 
 provider:
   name: aws
   runtime: python3.6
   region: eu-west-1
-  stage: test
+  stage: dev
   tags:
-    project: takeaway
+    project: SimpleFood
 
   iamRoleStatements:
     - Effect: Allow
@@ -36,6 +36,13 @@ functions:
     events:
       - http:
           path: /get-orders
+          method: post
+          cors: true
+  add_product:
+    handler: functions/add_product.handler
+    events:
+      - http:
+          path: /add-product
           method: post
           cors: true
   add_order:
