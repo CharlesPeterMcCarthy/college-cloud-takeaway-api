@@ -45,6 +45,13 @@ functions:
           path: /add-product
           method: post
           cors: true
+  delete_product:
+    handler: functions/delete_product.handler
+    events:
+      - http:
+          path: /delete-product
+          method: post
+          cors: true
   add_order:
     handler: functions/add_order.handler
     events:
